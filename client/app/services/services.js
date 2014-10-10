@@ -12,10 +12,22 @@ angular.module('shortly.services', [])
       return resp.data;
     });
   }; // mongodob call
-  return {
-    getLinks: getLinks
+
+  var addLink = function(link){
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
   };
 
+  return {
+    getLinks: getLinks,
+    addLink: addLink
+  };
 
 })
 .factory('Auth', function ($http, $location, $window) {
