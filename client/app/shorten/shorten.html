@@ -11,17 +11,17 @@
   <div class="link">
     <img src='/assets/redirect_icon.png'/>
     <div class='info'>
-      <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
-      <div class='title'>{{ link.title}}</div>
-      <div class='original'>{{ link.url }}</div>
-      <a href='{{ link.base_url }}/{{ link.code }}'>{{ link.base_url}}/{{ link.code}}</a>
+      <div class='visits'><span class='count'>{{ shortenedLink.visits }}</span>Visits</div>
+      <div class='title'>{{ shortenedLink.title}}</div>
+      <div class='original'>{{ shortenedLink.url }}</div>
+      <a href='{{ shortenedLink.base_url }}/api/links/{{ shortenedLink.code }}'>{{ shortenedLink.base_url}}/{{ shortenedLink.code}}</a>
     </div>
   </div>
 
   <div class='creator'>
     <form>
-        <input class='text' type='url' name='url'>
-        <input type='submit' value='Shorten'>
+        <input class='text' type='url' name='url' ng-model="link.url">
+        <input type='submit' value='Shorten' ng-click="addLink()">
     </form>
     <img class='spinner' src='/assets/spiffygif_46x46.gif'>
     <div class='message'></div>
