@@ -1,6 +1,9 @@
-<div id='container'>
-<!-- Your code here -->
-
+<div id='container' ng-controller='ShortenController'>
+  <h1>Shorten Linkzzzzz</h1>
+  <a href="/#/links">links</a>
+  <input ng-model="link.url" type="url">
+  <button ng-click="addLink()">ADD SHORT LINK</button>
+  <p>{{ shortenedLink }}</p>
 </div>
 
 
