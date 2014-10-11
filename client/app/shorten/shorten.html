@@ -1,9 +1,39 @@
 <div id='container' ng-controller='ShortenController'>
-  <h1>Shorten Linkzzzzz</h1>
+  <div class='navigation'>
+    <ul>
+      <li><a href='/#/links' class='index'>All Links</a></li>
+      <li><a href='#' class='create'>Shorten</a></li>
+      <li><a href='/logout' class='logout'>Logout</a></li>
+    </ul>
+
+  </div>
+
+  <div class="link">
+    <img src='/assets/redirect_icon.png'/>
+    <div class='info'>
+      <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
+      <div class='title'>{{ link.title}}</div>
+      <div class='original'>{{ link.url }}</div>
+      <a href='{{ link.base_url }}/{{ link.code }}'>{{ link.base_url}}/{{ link.code}}</a>
+    </div>
+  </div>
+
+  <div class='creator'>
+    <form>
+        <input class='text' type='url' name='url'>
+        <input type='submit' value='Shorten'>
+    </form>
+    <img class='spinner' src='/assets/spiffygif_46x46.gif'>
+    <div class='message'></div>
+  </div>
+
+</div>
+<!--
   <a href="/#/links">links</a>
+
   <input ng-model="link.url" type="url">
   <button ng-click="addLink()">ADD SHORT LINK</button>
   <p>{{ shortenedLink }}</p>
-</div>
+ -->
 
 
